@@ -12,15 +12,15 @@ public class CrawlerControler {
 
     CrawlController controller = null;
 
-    public CrawlerControler() {
+    public CrawlerControler(String seed) {
 
         CrawlConfig configuration = new CrawlConfig();
-        File crawlStorage = new File("src/test/resources/crawler4j");
-        configuration.setCrawlStorageFolder(crawlStorage.getAbsolutePath());
+        File crawlStorage = new File("src/resources/frontiers");
 
-        configuration.setPolitenessDelay(15000);
+        configuration.setCrawlStorageFolder(crawlStorage.getAbsolutePath());
+        configuration.setPolitenessDelay(2000);
         configuration.setMaxDepthOfCrawling(2);
-        configuration.setMaxPagesToFetch(10);
+        configuration.setMaxPagesToFetch(1);
         configuration.setResumableCrawling(false);
 
         // Instant.
@@ -34,7 +34,8 @@ public class CrawlerControler {
             e.printStackTrace();
         }
 
-        controller.addSeed("https://www.googleapis.com/discovery/v1/apis");
+        controller.addSeed(seed);
+        configuration.setIncludeBinaryContentInCrawling(true);
 
     }
 

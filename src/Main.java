@@ -30,7 +30,7 @@ public class Main {
             agentControllerAS.start();
 
         } catch (StaleProxyException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
     }
