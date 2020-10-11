@@ -25,3 +25,5 @@ hs_err_pid*
 /Cloud-Crawler.iml
 /APDescription.txt
 /MTPs-Main-Container.txt
+src/serviceDepot
+out
